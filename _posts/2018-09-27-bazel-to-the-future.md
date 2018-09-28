@@ -92,6 +92,12 @@ Resulting graph for this exercise:
 ![Deps](/assets/deps.png)
   
 
+Conclusion
+==========
+
+Bazel has lived up to its claim, a single command can build & run either Haskell or Java/JNI/Haskell binaries.
+
+The support for tagged import of the upstream Git JNI repository shows that Bazel, despite its monorepo origins, may be able to support multirepo approaches too.
 
 
 Alternate Timeline
