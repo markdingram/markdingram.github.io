@@ -51,6 +51,8 @@ local-maven-repo
 ````
 
 The local-maven-repo can then be synced across to an S3 bucket and used as a Maven repo, for example:
+
 <https://github.com/s3-wagon-private/s3-wagon-private>
+
 <https://tech.asimio.net/2018/06/27/Using-an-AWS-S3-Bucket-as-your-Maven-Repository.html>
 
