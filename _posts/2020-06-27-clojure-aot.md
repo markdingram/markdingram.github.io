@@ -16,7 +16,7 @@ Most commonly Clojure source files are interpreted at runtime. Clojure [Ahead of
 
 A few reasons are given on the Clojure website, but the main purpose I've come across is for Java interop, generating named classes for use by Java. For example AWS Lambda will require a class that implements `com.amazonaws.services.lambda.runtime.RequestStreamHandler` included in the Lambda ZIP.
 
-> If the long Clojure startup times are an issue for the particular use case consider using the excellent [Babashka](https://github.com/borkdude/babashka) instead of core Clojure.
+> If the long Clojure startup times are an issue for your use case consider using the excellent [Babashka](https://github.com/borkdude/babashka) instead of core Clojure.
 
 
 What are Java Annotation Processors?
@@ -58,14 +58,15 @@ package markdingram.sample;
 import com.github.markdingram.aot.Aot;
 ````
 
-
-The processor detects the annotation and triggers the compliation:
+Upon detection of such an annotation the compilation is triggered using Clojure's Java API:
 
 ````
+...
 IFn compileFn = Clojure.var("clojure.core", "compile");
 
 Var.pushThreadBindings(RT.map(
         Compiler.COMPILE_PATH, outputPath.toString(),
         Compiler.COMPILE_FILES, Boolean.TRUE));
 compileFn.invoke(Symbol.create(namespace));
+...
 ````
