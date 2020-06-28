@@ -75,7 +75,8 @@ Formatting the Bazel event
 Honeycomb maybe able to consume the events directly - but I didn't check. Instead JQ is used to flatten and reduce 
 the output event into a simplified format:
 
- ![map_test_results.sh](/assets/map_test_results.sh)
+{% link /assets/map_test_results.sh %}
+
 
 ````
 {"label":"//feed/src/test/clj/clj_stomp/alpha:alpha","id":"9d0af820af00b297c2128aed3f4a3f642a7a422457413b1c89acc467b7badc18","testDurationMillis":46,"testResultStatus":"FAILED","timestamp":"2020-06-28T21:21:17Z"}
