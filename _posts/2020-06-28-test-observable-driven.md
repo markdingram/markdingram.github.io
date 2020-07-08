@@ -132,3 +132,9 @@ A couple of links to checkout -
 <https://www.heavybit.com/library/podcasts/o11ycast/ep-21-learning-systems-with-jessica-kerr>
 
 <https://thenewstack.io/a-next-step-beyond-test-driven-development>
+
+
+Addendum (2020-07-08)
+=====================
+
+Discovered the <https://github.com/honeycombio/buildevents> project which looks like it could contribute to a more comprehensive approach building out CI observability.
