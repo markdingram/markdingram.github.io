@@ -47,20 +47,20 @@ While the generation of the cdk.out directory uses Bazel, the diff / apply of th
 The workflow shouldn't be complicated to follow, in the `build` job the steps of interest are:
 
 ````
-      - name: Test
-        run: |
-          bazel test //...
+- name: Test
+  run: |
+    bazel test //...
 
-      - name: Synth
-        run: |
-          bazel build infra:synth
-          find dist/bin/infra/cdk.out -type d -exec chmod 0755 {} \;
+- name: Synth
+  run: |
+    bazel build infra:synth
+    find dist/bin/infra/cdk.out -type d -exec chmod 0755 {} \;
 
-      - name: Upload Cloud Assembly
-        uses: actions/upload-artifact@v1
-        with:
-          name: cdk.out
-          path: dist/bin/infra/cdk.out
+- name: Upload Cloud Assembly
+  uses: actions/upload-artifact@v1
+  with:
+    name: cdk.out
+    path: dist/bin/infra/cdk.out
 ````
 
 As required run all tests first. A Bazel synth rule has been added to output the Cloud Assembly `dist/bin/infra/cdk.out` via `bazel build infra:synth`. 
@@ -70,26 +70,26 @@ As of now CDK likes to add '.cache' directories inside the cdk.out directory whe
 In the `diff` job the steps of note are:
 
 ````
-  - name: Download Cloud Assembly
-    uses: actions/download-artifact@v1
-    with:
-      name: cdk.out
+- name: Download Cloud Assembly
+  uses: actions/download-artifact@v1
+  with:
+    name: cdk.out
 
-  - name: Run CDK diff
-    run: node_modules/.bin/cdk diff -c aws-cdk:enableDiffNoFail=true --no-color --app cdk.out "*" 2>&1 | tee cdk.log
+- name: Run CDK diff
+  run: node_modules/.bin/cdk diff -c aws-cdk:enableDiffNoFail=true --no-color --app cdk.out "*" 2>&1 | tee cdk.log
 
-  - name: Add comment to PR
-    env:
-      URL: ${{ github.event.pull_request.comments_url }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    run: |
-      jq --raw-input --slurp '{body: .}' cdk.log > cdk.json
-      curl \
-        -H "Content-Type: application/json" \
-        -H "Authorization: token $GITHUB_TOKEN" \
-        -d @cdk.json \
-        -X POST \
-        $URL
+- name: Add comment to PR
+  env:
+    URL: ${{ github.event.pull_request.comments_url }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  run: |
+    jq --raw-input --slurp '{body: .}' cdk.log > cdk.json
+    curl \
+      -H "Content-Type: application/json" \
+      -H "Authorization: token $GITHUB_TOKEN" \
+      -d @cdk.json \
+      -X POST \
+      $URL
 ````
 
 
