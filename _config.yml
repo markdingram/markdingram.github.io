@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Do you remember?
+subtitle: (Hüsker Dü)
 email: mark@ingr.me
 description: >- # this means to ignore newlines until "baseurl:"
   Occasional notes to my future self & perhaps others
@@ -23,6 +24,8 @@ twitter_username: markdingram
 github_username:  markdingram
 minimal_mistakes_skin: default
 search: true
+locale: "en-GB"
+words_per_minute: 100
 
 # Build settings
 markdown: kramdown
@@ -64,7 +67,7 @@ author:
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://www.ingr.me"
+      url: "https://tech.ingr.me"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/markdingram"
@@ -98,7 +101,7 @@ defaults:
       related: true
   # _pages
   - scope:
-      path: "_pages"
+      path: ""
       type: pages
     values:
       layout: single
