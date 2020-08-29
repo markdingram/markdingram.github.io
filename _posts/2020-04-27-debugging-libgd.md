@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Notes on Debugging a C Library
 categories: [blog]
 tags: [c, gcc, linux, libgd, nginx, image_resize_filter]

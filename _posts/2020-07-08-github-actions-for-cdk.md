@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Basic CDK deployment pipeline with GitHub Actions
 categories: [blog]
 tags: [ci, bazel, cdk, deployment]

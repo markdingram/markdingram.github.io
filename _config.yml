@@ -13,32 +13,100 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Mark -> Blog
-email: mark@markdingram.com
+title: Do you remember?
+email: mark@ingr.me
 description: >- # this means to ignore newlines until "baseurl:"
-  Mark is a programmer with specific interests in Distributed Systems Design & Continuous Delivery. This is his blog.
+  Occasional notes to my future self & perhaps others
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.markdingram.com" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: \?
+url: "https://tech.ingr.me" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: markdingram
 github_username:  markdingram
+minimal_mistakes_skin: default
+search: true
 
 # Build settings
 markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
+remote_theme: mmistakes/minimal-mistakes
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+include:
+  - _pages
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - default.nix
-  - README.md
-  - CNAME
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+author:
+  name   : "Mark Ingram"
+  avatar : "/assets/James_Flamingo_mating_ritual.jpg"
+  bio    : "Lurking from home"
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.ingr.me"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/markdingram"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/markdingram"
+    - label: "Flamingo"
+      icon: "fab fa-fw fa-wikipedia-w"
+      url: "https://en.wikipedia.org/wiki/James%27s_flamingo"  
+
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/markdingram"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/markdingram"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/

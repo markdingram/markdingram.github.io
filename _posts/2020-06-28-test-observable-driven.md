@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Test Run Observability
 categories: [blog]
 tags: [builds, honeycomb, bazel]

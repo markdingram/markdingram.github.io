@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Docker Volumes on host with SELinux
 categories: [blog]
 tags: [docker, selinux]

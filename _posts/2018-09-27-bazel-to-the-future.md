@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Bazel to the Future
 categories: [blog]
 tags: [builds, java, haskell, nix, bazel]

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Bazel Clojure
 categories: [blog]
 tags: [builds, clojure, bazel]

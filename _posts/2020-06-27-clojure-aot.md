@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Clojure AOT via Java Annotation Processor
 categories: [blog]
 tags: [builds, java, clojure]

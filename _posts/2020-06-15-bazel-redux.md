@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Bazel Redux
 categories: [blog]
 tags: [builds, java, haskell, nix, bazel]

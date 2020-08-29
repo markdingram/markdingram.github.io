@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Maven Local Install
 categories: [blog]
 tags: [builds, java, maven]
