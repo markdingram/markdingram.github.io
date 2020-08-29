@@ -1,8 +1,9 @@
 View drafts
 ===========
 
+(OSX - install rbenv)
+
 ````
-nix-shell default.nix
 bundle install
 bundle exec jekyll serve --drafts
 ```
