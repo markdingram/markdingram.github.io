@@ -19,7 +19,7 @@ email: mark@ingr.me
 description: >- # this means to ignore newlines until "baseurl:"
   Occasional notes to my future self & perhaps others
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tech.ingr.me" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.ingr.me" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: markdingram
 github_username:  markdingram
 minimal_mistakes_skin: default
@@ -67,7 +67,7 @@ author:
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://tech.ingr.me"
+      url: "https://www.ingr.me"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/markdingram"
