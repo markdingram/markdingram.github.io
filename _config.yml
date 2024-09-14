@@ -67,10 +67,7 @@ author:
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://www.ingr.me"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/markdingram"
+      url: "https://www.lincs.dev"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/markdingram"
